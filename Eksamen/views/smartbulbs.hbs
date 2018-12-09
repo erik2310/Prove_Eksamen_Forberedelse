@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Smartbulbs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/smartbulbsStyle.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+
+    <h1 class="royalblueBackground">IKEAs Smartbulbs</h1>
+
+    <table style="width:100%">
+        <tr>
+            <th>isTurnedOn</th>
+            <th>nominalPowerUsage</th>
+            <th>currentPowerUsage</th>
+            <th>canAdjustLightIntensity</th>
+            <th>lightIntensity</th>
+            <th>canChangeColor</th>
+            <th>color</th>
+            <th>uID</th>
+            <th>hardwareTypeNumber</th>
+            <th>softwareVersion</th>
+        </tr>
+        {{#each this}}
+        <tr>
+            <td>{{this.isTurnedOn}}</td>
+            <td>{{this.nominalPowerUsage}}</td>
+            <td>{{this.currentPowerUsage}}</td>
+            <td>{{this.canAdjustLightIntensity}}</td>
+            <td>{{this.lightIntensity}}</td>
+            <td>{{this.canChangeColor}}</td>
+            <td>{{this.color}}</td>
+            <td>{{this.uID}}</td>
+            <td>{{this.hardwareTypeNumber}}</td>
+            <td>{{this.softwareVersion}}</td>
+        </tr>
+        {{/each}}
+    </table>
+
+    <h1>Tilføj en smartbulb</h1>
+
+    <form method="POST" action="smartbulbs/insertsmartbulbs">
+        <p>isTurnedOn: <input type="checkbox" name="isTurnedOn"></p>
+        <p>nominalPowerUsage: <input type="number" name="nominalPowerUsage"></p>
+        <p>currentPowerUsage: <input type="number" name="currentPowerUsage"></p>
+        <p>canAdjustLightIntensity:  <input type="checkbox" name="canAdjustLightIntensity"></p>
+        <p>lightIntensity: <input type="number" name="lightIntensity"></p>
+        <p>canChangeColor: <input type="checkbox" name="canChangeColor"></p>
+        <p>color: <input type="text" name="color"></p>
+        <p>uID: <input type="number" name="uID"></p>
+        <p>hardwareTypeNumber: <input type="text" name="hardwareTypeNumber"></p>
+        <p>softwareVersion: <input type="text" name="softwareVersion"></p>
+        <input id="button" type="submit" value="Tilføj">
+    </form>
+
+</body>
+
+</html>
